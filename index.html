@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia LifeChange</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Academia LifeChange</h1>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form id="personal-info-form">
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Idade:</label>
+                        <input type="number" class="form-control" id="age" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" class="form-control" id="cpf" required>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-block" onclick="confirmPersonalInfo()">Confirmar Dados</button>
+                </form>
+            </div>
+        </div>
+        <div class="row mt-4" id="imc-calculator" style="display: none;">
+            <div class="col-md-6 offset-md-3">
+                <h2 class="text-center">Calculadora de IMC</h2>
+                <div class="form-group">
+                    <label for="weight">Peso (em kg):</label>
+                    <input type="number" class="form-control" id="weight" required>
+                </div>
+                <div class="form-group">
+                    <label for="height">Altura (em metros):</label>
+                    <input type="number" class="form-control" id="height" step="0.01" required>
+                </div>
+                <button type="button" class="btn btn-primary btn-block" onclick="calculateIMC()">Calcular IMC</button>
+                <div id="imc-result" class="mt-3 text-center"></div>
+            </div>
+        </div>
+        <div class="row mt-4" id="goal-questionnaire" style="display: none;">
+            <div class="col-md-6 offset-md-3">
+                <h2 class="text-center">Qual sua meta na academia?</h2>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="goal" id="goal-hypertrophy" value="Hipertrofia">
+                    <label class="form-check-label" for="goal-hypertrophy">A- Hipertrofia</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="goal" id="goal-weight-loss" value="Perda de peso">
+                    <label class="form-check-label" for="goal-weight-loss">B- Perda de peso</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="goal" id="goal-health" value="Saúde">
+                    <label class="form-check-label" for="goal-health">C- Saúde</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="goal" id="goal-strength" value="Fortalecimento">
+                    <label class="form-check-label" for="goal-strength">D- Fortalecimento</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="goal" id="goal-fitness" value="Condicionamento físico">
+                    <label class="form-check-label" for="goal-fitness">E- Condicionamento físico</label>
+                </div>
+                <button type="button" class="btn btn-primary btn-block mt-3" onclick="showWorkoutAndDiet()">Confirmar</button>
+            </div>
+        </div>
+        <div class="row mt-4" id="workout-and-diet" style="display: none;">
+            <div class="col-md-6 offset-md-3">
+                <h2 class="text-center">Plano de Treino e Dieta</h2>
+                <div id="workout"></div>
+                <div id="diet"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
